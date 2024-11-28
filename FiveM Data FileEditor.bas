@@ -97,6 +97,7 @@
         if open2$ = "" then
         goto [DoNothing]
         else
+            print #le.text, "!cls"
             open open2$ for input as #openF
             code$ = input$(#openF, lof(#openF))
             print #le.text, code$
