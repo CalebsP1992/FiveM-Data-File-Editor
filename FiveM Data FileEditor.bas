@@ -5,7 +5,7 @@
     'AUTHOR - PLAYDOUGH'
     'NAME -   FiveM Data File Editor'
     'SUPPORTED FILE TYPES - .lua .meta .json .txt .xml'
-    'VERSION - 1.0.0'
+    'VERSION - 1.0.3'
 
 
 
@@ -64,6 +64,9 @@
 'SETS UP TRAPCLOSE FOR NATIVE PROGRAM SHUTDOWN'
         print #le, "trapclose [exit]";
 
+'CHECKS TO SEE IF THE CONTENTS OF THE TEXT EDITOR HAS BEEN MODIFIED'
+        print #le.text, "!modified? mod$"
+
 'SETS UP TEXTEDITOR'
         print #le.text, "!autoresize"
         print #le.text, "!font consolas 13"
@@ -75,7 +78,17 @@
     [codeColor]
 'WIP - SYNTAX COLOR'
         Wait
+    [modSave]
+'CONFIRMS USERS SAVE/LOAD WISHES'
+        saved$ = "false"
+        confirm "Would you like to save?"; yn$
 
+        if yn$ = "yes" then
+            goto [save]
+        else
+            goto [continueOpen]
+        end if
+    wait
 
     [save]
 'OPENS GUI TO SAVE DATA FILE'
@@ -88,10 +101,16 @@
             open save1$ for binary as #save
             print #save, a$
             close #save
+            mod$ = "false"
+            saved$ = "true"
         end if
     Wait
 
     [open]
+'CHECKS FOR FILE MODIFICATIONS'
+goto [modSave]
+    wait
+    [continueOpen]
 'OPENS GUI TO OPEN DATA FILE'
         filedialog "Open Data File", "*.lua;*.meta;*.json;*.xml;*.txt", open2$
         if open2$ = "" then
@@ -105,6 +124,7 @@
             print #le.text, "!font consolas 13"
             close #openF
         end if
+
     Wait
 
     [exit]
