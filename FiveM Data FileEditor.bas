@@ -2,10 +2,10 @@
 'MODIFICATIONS TO THIS SOFTWARE IS WELCOME'
 'YOU CAN MODIFY THIS TO IMPROVE IT -- AS LONG AS YOU  CREDIT ME'
 'DISCORD -- https://discord.gg/prau4ysZSK --'
-    'AUTHOR - PLAYDOUGH'
-    'NAME -   FiveM Data File Editor'
-    'SUPPORTED FILE TYPES - .lua .meta .json .txt .xml'
-    'VERSION - 1.0.3'
+    'AUTHOR -   PLAYDOUGH'
+    'NAME -     FiveM Data File Editor'
+    'SUPPORTED  FILE TYPES - .lua .meta .json .txt .xml'
+    'VERSION -  1.0.4'
 
 
 
@@ -52,14 +52,15 @@
         TexteditorColor$ = "gray"       'TEXT BACKGROUND COLOR'
 
 'BUTTONS'
-        Button #le.open, "Open", [open],UL, 7, 10, 95, 35
-        Button #le.save, "Save", [save],UL, 7, 45, 95, 35
+        Button #le.open, "Open", [open],UL, 7, 50, 95, 35
+        Button #le.save, "Save", [save],UL, 7, 90, 95, 35
+        Button #le.new,  "New File", [new],UL, 7, 10, 95, 35
 
 'TEXTEDITOR'
         texteditor #le.text, 107, 10, 873, 427
 
 'OPENS MAIN GUI'
-        Open "FiveM Data File Editor" for window as #le
+        Open "FiveM Data File Editor - [FREE]" for window as #le
 
 'SETS UP TRAPCLOSE FOR NATIVE PROGRAM SHUTDOWN'
         print #le, "trapclose [exit]";
@@ -107,8 +108,8 @@
     Wait
 
     [open]
-'CHECKS FOR FILE MODIFICATIONS'
-goto [modSave]
+'CHECKS FOR FILE MODIFICATIONS' 'DEFERRED'
+        goto [modSave]
     wait
     [continueOpen]
 'OPENS GUI TO OPEN DATA FILE'
@@ -126,6 +127,11 @@ goto [modSave]
         end if
 
     Wait
+
+    [new]
+'STARTS A NEW FILE'
+        print #le.text, "!cls"
+    wait
 
     [exit]
 'CHECKS TO SEE IF TASK #save or #openF IS RUNNING -- KILLS THEM IF THEY ARE -- CLOSES MAIN PROGRAM'
