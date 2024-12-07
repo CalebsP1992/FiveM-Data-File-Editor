@@ -2,6 +2,31 @@ THIS IS NOT WRITTEN IN FREE BASIC, IT IS WRITTEN IN Liberty BASIC v4.5.1
 
 Alternate Version Written in Python.
 
+HUGE UPDATE
+
+PYTHON VERSION SIGNIFICANTLY UPGRADED
+
+Included in the python version 2.4.1:
+
+FiveM Data Files Editor Documentation
+    
+        Keyboard Shortcuts:
+        - Ctrl + N: New File
+        - Ctrl + O: Open File
+        - Ctrl + S: Save File
+        - Ctrl + F: Find
+        - Ctrl + H: Replace
+    
+        Features:
+        - Super Lightweight
+        - Syntax highlighting for multiple file types
+        - Line numbering
+        - Dark theme
+        - Find and Replace functionality
+        - Python code execution
+        - Liberty BASIC code execution (WIP)
+        - Terminal integration
+
 READ ME
 
 This software is open source
