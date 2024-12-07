@@ -1,12 +1,10 @@
-THIS IS NOT WRITTEN IN FREE BASIC, IT IS WRITTEN IN Liberty BASIC v4.5.1
-
-Alternate Version Written in Python.
+Written in Python.
 
 HUGE UPDATE
 
-PYTHON VERSION SIGNIFICANTLY UPGRADED
+SIGNIFICANTLY UPGRADED
 
-Included in the python version 2.4.1:
+Included in version 2.4.1:
 
 FiveM Data Files Editor Documentation
     
@@ -29,14 +27,20 @@ FiveM Data Files Editor Documentation
 
 READ ME
 
-This software is open source
+This software is being developed in python3
 
-You may edit/modify this software as you please as long as you give me, PlayDough credit.
+It can open, edit, save and create files of these types:
 
-You may use this software for any FiveM dev work you like, although it is only in it's beginning stages of development.
+.py 
+.lua 
+.bas 
+.xml 
+.json 
+.meta
+.txt
 
-This software can create, open, modify and save common file types used in FiveM development.
+This software is free while in it's BETA stage
 
-Visit my discord to contribute to this project -- https://discord.gg/prau4ysZSK
+This software can run Python scripts (REQUIRES LATEST VERSION OF PYTHON)
 
-This software is being developed in Liberty BASIC v4.5.1
+ENJOY
